@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+
+    <title>IP Address Tracker</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+
+<body>
+    <div class="modal"></div>
+    <div class="jumbotron">
+        <div class="container position-relative">
+            <div class="bg-box">
+                <div class="header-title">
+                    <h3 class="text-white letter-spacing-05">IP Address Tracker</h3>
+                </div>
+                <div class="search-box">
+                    <div class="searchbar d-flex align-items-center">
+                        <input class="d-md-block d-none desk-search-input" type="text" name="search" id="search" placeholder="Search for any IP address or domain">
+                        <input class="d-md-none mob-search-input" type="text" name="search" id="search1" placeholder="Search for any IP address ...">
+
+                    </div>
+                    <a href="javascript:ipRequest()" class="go-icon d-flex justify-content-center align-items-center">
+                        <i class="fas fa-chevron-right font-14"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="ipmap"></div>
+            <div class="d-md-block d-none">
+                <div id="ipInfo" class="position-absolute ip-info-box d-flex justify-content-center">
+                    <div class="info-dialog d-flex align-items-center">
+                        <div class="row">
+                            <div class="col-md-3 border-limit">
+                                <div class="one-box">
+                                    <div class="info-name text-uppercase mb-2">IP Address</div>
+                                    <div class="info-content">
+                                        <h4 id="ipAddressValue"></h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 border-limit">
+                                <div class="one-box">
+                                    <div class="info-name text-uppercase mb-2">Location</div>
+                                    <div class="info-content">
+                                        <h4 id="locationValue"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 border-limit">
+                                <div class="one-box">
+                                    <div class="info-name text-uppercase mb-2">Timezone</div>
+                                    <div class="info-content">
+                                        <h4 id="timeZone"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 border-limit">
+                                <div id="txtLimit" class="one-box">
+                                    <div class="info-name text-uppercase mb-2">ISP</div>
+                                    <div class="info-content">
+                                        <h4 id="ispValue"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-md-none">
+                <div id="ipInfo1" class="position-absolute mob-ip-info-box d-flex justify-content-center">
+                    <div class="mob-info-dialog d-flex align-items-center text-center">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="one-box">
+                                    <div class="info-name text-uppercase">IP Address</div>
+                                    <div class="info-content">
+                                        <h4 id="ipAddressValue1"></h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="one-box">
+                                    <div class="info-name text-uppercase">Location</div>
+                                    <div class="info-content">
+                                        <h4 id="locationValue1"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="one-box">
+                                    <div class="info-name text-uppercase">Timezone</div>
+                                    <div class="info-content">
+                                        <h4 id="timeZone1"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" style="border: none;">
+                                <div class="one-box mb-0">
+                                    <div class="info-name text-uppercase">ISP</div>
+                                    <div class="info-content">
+                                        <h4 id="ispValue1"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/js/jquery-3.5.1.js"></script>
+    <script src="dist/js/leaflet.js"></script>
+</body>
+
+</html>
